@@ -1,0 +1,15 @@
+<form class="form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter User name" (keypress)="keyPress($event)">
+  </mat-form-field>
+</form>
+<div class="body-wrapper" *ngIf="userList.length > 0">
+  <mat-list class="list-body" role="list" *ngFor="let user of userList">
+    <mat-card>
+      <mat-card-header>
+        <img src="{{user.avatar_url}}" mat-card-avatar/>
+        <mat-card-title>{{user.login}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </mat-list>
+</div>
